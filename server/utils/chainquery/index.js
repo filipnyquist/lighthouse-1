@@ -163,6 +163,7 @@ function getClaimsSince (time) {
       `p.name as channel,` +
       `c.bid_state,` +
       `c.effective_amount,` +
+      `COALESCE(p.effective_amount,0.0) as certificate_amount,` +
       `c.claim_id as claimId,` +
       `c.value_as_json as value ` +
       // `,transaction_by_hash_id, ` + // txhash and vout needed to leverage old format for comparison.
